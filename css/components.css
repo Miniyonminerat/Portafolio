@@ -1,0 +1,702 @@
+/* ================================
+   COMPONENTS.CSS — Elementos reutilizables
+   ================================ */
+ 
+/* ---- Botones ---- */
+
+.btn {
+
+    display: inline-flex; /* Usamos flexbox para centrar el contenido del botón */
+
+    align-items: center; /* Alineamos el contenido del botón verticalmente */
+
+    gap: 8px; /* Espacio entre el icono y el texto del botón */
+
+    padding: 0.75rem, 1.5rem; /* Espaciado interno del botón */
+
+    font-size: 0.85rem; /* Tamaño de fuente para el texto del botón */
+
+    font-family: var(--font-body); /* Usamos la variable para la tipografía del cuerpo del texto */
+
+    font-weight: 500; /* Peso de fuente para el texto del botón */
+
+    letter-spacing: 0.06em; /* Espaciado entre letras para el texto del botón */
+
+    text-transform: uppercase; /* Convertimos el texto del botón a mayúsculas */
+
+    transition: all var(--transition); /* Transición suave para todas las propiedades del botón */
+
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar sobre el botón */
+
+    border: none; /* Eliminamos el borde por defecto del botón */
+
+    text-decoration: none; /* Eliminamos el subrayado de los enlaces que son botones */
+}
+
+.btn-primary {
+    background-color: var(--accent); /* Usamos la variable para el color de fondo del botón primario */
+    color: #fff; /* Color del texto para el botón primario */
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover); /* Usamos la variable para el color de fondo al pasar el mouse sobre el botón primario */
+    color: #fff; /* Mantenemos el color del texto al pasar el mouse sobre el botón primario */
+}
+
+.btn-secondary {
+    background-color: transparent; /* Fondo transparente para el botón secundario */
+    color: var(--text); /* Usamos la variable para el color del texto del botón secundario */
+    border: 1px solid var(--border); /* Borde sólido para el botón secundario */
+}
+
+.btn-secondary:hover {
+    color: var(--accent); /* Cambiamos el color del texto al pasar el mouse sobre el botón secundario */
+    border-color: var(--accent); /* Cambiamos el color del borde al pasar el mouse sobre el botón secundario */
+    opacity: 1; /* Aseguramos que el botón secundario no tenga opacidad al pasar el mouse */
+}
+
+/* ---- Logo círculo JDM ---- */
+
+#logo-circle {
+  width: 40px; /* Ancho del logo circular */
+
+  height: 40px; /* Alto del logo circular */
+  
+  border-radius: var(--radius-full); /* Hacemos que el logo sea completamente circular usando la variable para el radio completo */
+  
+  border: 2px solid var(--accent); /* Borde sólido para el logo circular usando la variable para el color de acento */
+  
+  display: flex; /* Usamos flexbox para centrar el contenido del logo circular */
+  
+  align-items: center; /* Alineamos el contenido del logo circular verticalmente */
+  
+  justify-content: center; /* Alineamos el contenido del logo circular horizontalmente */
+  
+  font-family: var(--font-display); /* Usamos la variable para la tipografía de títulos en el logo circular */
+  
+  font-size: 0.75rem; /* Tamaño de fuente para el texto dentro del logo circular */
+  
+  font-weight: 700; /* Peso de fuente para el texto dentro del logo circular */
+  
+  color: var(--accent); /* Usamos la variable para el color del texto dentro del logo circular */
+  
+  letter-spacing: 0.04em; /* Espaciado entre letras para el texto dentro del logo circular */ 
+  
+  transition: all var(--transition); /* Transición suave para todas las propiedades del logo circular */
+}
+
+#logo-circle:hover {
+  background-color: var(--accent); /* Usamos la variable para el color de fondo al pasar el mouse sobre el logo circular */
+  
+  color: #fff; /* Cambiamos el color del texto a blanco al pasar el mouse sobre el logo circular */
+}
+
+
+/* --- Tags /Badges --- */
+
+.tag {
+    display: inline-block; /*Hacemos que el tag sea un bloque en línea para poder aplicar padding */
+
+    font-size: 0.7rem; /* Tamaño de fuente más pequeño para el tag */
+
+    letter-spacing: 0.08em; /* Espaciado entre letras para el tag */
+
+    padding: 3px 10px; /* Espaciado interno para el tag */
+
+    border: 0.5px solid var(--border); /* Borde sólido para el tag usando la variable para el color del borde */
+
+    color: var(--text-muted); /* Usamos la variable para el color del texto atenuado en el tag */
+
+    transition: border-color var(--transition); /* Transición suave para el cambio de color del borde al pasar el mouse sobre el tag */
+
+}
+
+.tag:hover {
+    border-color: var(--accent); /* Cambiamos el color del borde al pasar el mouse sobre el tag usando la variable para el color de acento */
+
+    color: var(--accent); /* Cambiamos el color del texto al pasar el mouse sobre el tag usando la variable para el color de acento */
+}
+
+/* --- Social Links --- */
+
+.social-link {
+
+    display: inline-flex; /* Usamos flexbox para centrar el contenido del enlace social */
+
+    align-items: center; /* Alineamos el contenido del enlace social verticalmente */
+
+    justify-content: center; /* Alineamos el contenido del enlace social horizontalmente */
+
+    width: 38px; /* Ancho del enlace social */
+
+    height: 38px; /* Alto del enlace social */
+
+    border: 0.5px solid var(--border); /* Borde sólido para el enlace social usando la variable para el color del borde */
+
+    font-size: 1rem; /* Tamaño de fuente para el texto del enlace social */
+
+    color: var(--text-muted); /* Usamos la variable para el color del texto del enlace social */
+
+    transition: all var(--transition); /* Transición suave para todas las propiedades del enlace social */
+
+    text-decoration: none; /* Eliminamos el subrayado de los enlaces sociales */
+}
+
+.social-link:hover {
+    border-color: var(--accent); /* Cambiamos el color del borde al pasar el mouse sobre el enlace social usando la variable para el color de acento */
+
+    color: var(--accent); /* Cambiamos el color del texto al pasar el mouse sobre el enlace social usando la variable para el color de acento */
+
+    opacity: 1; /* Aseguramos que el enlace social no tenga opacidad al pasar el mouse */
+}
+
+/* --- Stats Cards --- */
+
+.stat-card {
+
+    padding: var(--space-sm); /* Espaciado interno para la tarjeta de estadísticas usando la variable para el espacio pequeño */
+
+    border: 0.5px solid var(--border); /* Borde sólido para la tarjeta de estadísticas usando la variable para el color del borde */
+
+    display: flex; /* Usamos flexbox para organizar el contenido de la tarjeta de estadísticas */
+
+    flex-direction: column; /* Organizamos el contenido de la tarjeta de estadísticas en una columna */
+    
+    gap: 4px; /* Espacio entre los elementos dentro de la tarjeta de estadísticas */
+
+    background-color: var(--color-primary-dark); /* Usamos la variable para el color de fondo oscuro en la tarjeta de estadísticas */
+
+    transition: border-color var(--transition); /* Transición suave para el cambio de color del borde al pasar el mouse sobre la tarjeta de estadísticas */
+
+}
+
+.stat-card:hover {
+
+    border-color: var(--accent); /* Cambiamos el color del borde al pasar el mouse sobre la tarjeta de estadisticas usando la variable para el color de acento */
+}
+
+.stat-number {
+    font-family: var(--font-display); /* Usamos la variable para la tipografía de títulos en el número de estadísticas */
+    
+    font-size: 2rem; /* Tamaño de fuente grande para el número de estadísticas */
+
+    font-weight: 700; /* Peso de fuente para el número de estadísticas */
+
+    color: var(--text); /* Usamos la variable para el color del texto en el número de estadísticas */
+
+    line-height: 1; /* Altura de línea para el número de estadísticas */
+}
+
+.stat-label {
+    font-size: 0.75rem; /* Tamaño de fuente más pequeño para la etiqueta de estadísticas */
+
+    color: var(--text-muted); /* Usamos la variable para el color del texto atenuado en la etiqueta de estadísticas */
+
+    letter-spacing: 0.04em; /* Espaciado entre letras para la etiqueta de estadísticas */
+}
+
+/* ---- Info items (Sobre mi) ---- */
+
+.info-item {
+
+    display: flex; /* Usamos flexbox para organizar el contenido del item de información */
+
+    align-items: center; /* Alineamos el contenido del item de información verticalmente */
+
+    gap: 10px; /* Espacio entre el icono y el texto del item de información */
+
+    font-size: 0.9rem; /* Tamaño de fuente para el texto del item de información */
+
+
+}
+
+.info-item i{
+
+    font-size: 0.85rem; /* Tamaño de fuente para el icono del item de información */
+
+    width: 16px; /* Ancho fijo para el icono del item de información para alinear con el texto */
+
+
+}
+
+
+/* --- Skills groups --- */
+
+.skill-group {
+
+    padding: var(--space-sm) var(--space-md); /* Espaciado interno para el grupo de habilidades usando las variables para el espacio pequeño y mediano */
+
+    border: 0.5px solid var(--border); /* Borde sólido para el grupo de habilidades usando la variable para el color del borde */
+
+    background-color: var(--color-primary-dark); /* Usamos la variable para el color de fondo oscuro en el grupo de habilidades */
+
+    transition: border-color var(--transition); /* Transición suave para el cambio de color del borde al pasar el mouse sobre el grupo de habilidades */
+}
+
+.skill-group:hover{
+
+    border-color: var(--accent); /* Cambiamos el color del borde al pasar el mouse sobre el grupo de habilidades usando la variable para el color de acento */
+
+}
+
+.skill-group-title {
+
+    font-family: var(--font-body); /* Usamos la variable para la tipografía del cuerpo del texto en el título del grupo de habilidades */
+
+    font-size: 0.8rem; /* Tamaño de fuente para el título del grupo de habilidades */
+
+    font-weight: 600; /* Peso de fuente para el título del grupo de habilidades */
+
+    letter-spacing: 0.12em; /* Espaciado entre letras para el título del grupo de habilidades */
+
+    text-transform: uppercase; /* Convertimos el texto del título del grupo de habilidades a mayúsculas */
+
+    color: var(--text); /* Usamos la variable para el color del texto en el título del grupo de habilidades */
+
+    margin-bottom: var(--space-sm); /* Espacio debajo del título del grupo de habilidades usando la variable para el espacio pequeño */
+
+    display: flex; /* Usamos flexbox para organizar el contenido del título del grupo de habilidades */
+
+    align-items: center; /* Alineamos el contenido del título del grupo de habilidades verticalmente */
+
+    gap: 8px; /* Espacio entre el icono y el texto del título del grupo de habilidades */   
+
+}
+
+
+.skill-group-title i {
+
+    font-size: 0.85rem;
+}
+
+
+/* El contenedor vertical de todas las filas de habilidades */
+.skill-list {
+  display: flex;
+  
+  flex-direction: column; /* apila las filas una debajo de la otra */
+  
+  gap: 10px;
+}
+ 
+/* Una sola fila de habilidad — [ícono] Nombre de tecnología */
+.skill-item {
+  display: flex;
+  
+  align-items: center; /* ícono y texto centrados verticalmente */
+  
+  gap: 10px;
+  
+  font-size: 0.9rem;
+  
+  color: var(--text-muted);          /* texto gris por defecto */
+  
+  padding: 6px 0;
+  
+  border-bottom: 0.5px solid var(--border-soft); /* línea separadora 
+  sutil */
+  
+  transition: color var(--transition);
+}
+ 
+/* La última fila no tiene línea separadora en el fondo */
+.skill-item:last-child {
+  border-bottom: none;
+}
+ 
+/* Al pasar el mouse el texto se oscurece */
+.skill-item:hover {
+  color: var(--text);
+}
+ 
+/* El ícono de Font Awesome dentro de cada fila
+   Ancho fijo de 20px para que todos los textos queden alineados */
+.skill-item i {
+  font-size: 1rem;
+  
+  width: 20px;
+  
+  color: var(--accent); /* el ícono siempre es rojo */
+}
+ 
+/* ------------------------------------------------
+   TARJETAS DE PROYECTOS
+   ------------------------------------------------ */
+ 
+/* La tarjeta contenedor de cada proyecto */
+.project-card {
+  
+    padding: var(--space-md);
+  
+    border: 0.5px solid var(--border);
+  
+    background-color: var(--bg-soft);
+  
+    /* Anima el borde y la posición al hacer hover */
+  
+    transition: border-color var(--transition), transform var
+    (--transition);
+}
+ 
+/* Al pasar el mouse: borde rojo + la tarjeta sube 4px (efecto 3D) */
+.project-card:hover {
+  
+    border-color: var(--accent);
+  
+    transform: translateY(-4px);
+}
+ 
+/* La fila superior de la tarjeta — tipo a la izquierda, íconos a la derecha */
+.project-header {
+  display: flex;
+  
+  align-items: center;
+  
+  justify-content: space-between; /* empuja tipo a izq, links a der */
+  
+  margin-bottom: var(--space-sm);
+}
+
+ 
+/* La etiqueta de categoría del proyecto — "Fullstack", "Backend", "Frontend" */
+.project-type {
+  font-size: 0.7rem;
+  
+  letter-spacing: 0.15em;
+  
+  text-transform: uppercase;
+  
+  color: var(--accent); /* siempre rojo */
+  
+  font-weight: 500;
+}
+ 
+/* Los íconos de GitHub y link externo en la esquina superior derecha */
+.project-links {
+  display: flex;
+  
+  gap: 12px;
+}
+ 
+/* Cada ícono individualmente */
+.project-links a {
+  color: var(--text-muted); /* gris por defecto */
+  
+  font-size: 1rem;
+  
+  transition: color var(--transition);
+}
+ 
+/* Al pasar el mouse el ícono se vuelve rojo */
+.project-links a:hover {
+  color: var(--accent);
+  
+  opacity: 1;
+}
+ 
+/* El nombre del proyecto */
+.project-title {
+  font-family: var(--font-display); /* Noto Serif JP */
+  
+  font-size: 1.1rem;
+  
+  font-weight: 700;
+  
+  color: var(--text);
+  
+  margin-bottom: 0.5rem;
+}
+ 
+/* La descripción corta del proyecto */
+.project-desc {
+  font-size: 0.9rem;
+  
+  color: var(--text-muted);
+  
+  margin-bottom: var(--space-sm);
+  
+  line-height: 1.7;
+}
+ 
+/* La fila de etiquetas de tecnologías al fondo de la tarjeta */
+.project-tags {
+  display: flex;
+  
+  flex-wrap: wrap; /* si no caben en una línea, bajan a la siguiente */
+  
+  gap: 6px;
+}
+ 
+/* ------------------------------------------------
+   TARJETAS DE EDUCACIÓN
+   ------------------------------------------------ */
+ 
+/* La tarjeta de cada entrada educativa
+   El detalle más importante: borde izquierdo rojo grueso como línea de tiempo */
+.edu-card {
+  padding: var(--space-md);
+  
+  border-left: 2px solid var(--accent);          /* borde izquierdo 
+  rojo grueso */
+  
+  background-color: var(--bg-soft);
+  
+  border-top: 0.5px solid var(--border);         /* los otros 3 bordes 
+  son sutiles */
+  
+  border-right: 0.5px solid var(--border);
+  
+  border-bottom: 0.5px solid var(--border);
+  
+  transition: background-color var(--transition);
+}
+ 
+/* Al pasar el mouse el fondo se aclara ligeramente */
+.edu-card:hover {
+  background-color: var(--bg);
+}
+ 
+/* La fila superior con el año y el badge de tipo */
+.edu-header {
+  display: flex;
+  
+  align-items: center;
+  
+  gap: 12px;
+  
+  margin-bottom: 0.75rem;
+}
+ 
+/* El rango de fechas — "2024 — Actualidad" */
+.edu-year {
+  font-size: 0.75rem;
+  
+  color: var(--text-muted);
+  
+  letter-spacing: 0.06em;
+}
+ 
+/* El badge de tipo de formación — "Técnico", "Curso", "Certificado"
+   Badge estilo outline: fondo transparente, borde y texto rojos */
+.edu-type {
+  font-size: 0.65rem;
+  
+  letter-spacing: 0.12em;
+  
+  text-transform: uppercase;
+  
+  color: var(--accent);
+  
+  border: 0.5px solid var(--accent);
+  
+  padding: 2px 8px;
+}
+ 
+/* El nombre del título o curso */
+.edu-title {
+  font-family: var(--font-display); /* Noto Serif JP */
+  
+  font-size: 1rem;
+  
+  font-weight: 700;
+  
+  color: var(--text);
+  
+  margin-bottom: 4px;
+}
+ 
+/* El nombre de la institución — en rojo para que resalte */
+.edu-place {
+  font-size: 0.85rem;
+  
+  color: var(--accent);
+  
+  margin-bottom: 0.5rem;
+  
+  font-weight: 500;
+}
+ 
+/* La descripción corta de lo que se aprendió */
+.edu-desc {
+  font-size: 0.875rem;
+  
+  color: var(--text-muted);
+  
+  margin-bottom: var(--space-sm);
+}
+ 
+/* El enlace "Ver certificado →" al fondo de la tarjeta */
+.edu-link {
+  display: inline-flex;
+  
+  align-items: center;
+  
+  gap: 6px;               /* espacio entre el texto y la flecha */
+  
+  font-size: 0.8rem;
+  
+  color: var(--accent);
+  
+  letter-spacing: 0.06em;
+  
+  text-transform: uppercase;
+  
+  font-weight: 500;
+  
+  transition: gap var(--transition); /* lo que se anima es el GAP, no 
+  el color */
+}
+ 
+/* Al pasar el mouse el espacio entre texto y flecha aumenta
+   creando el efecto de que la flecha se desliza a la derecha */
+.edu-link:hover {
+  gap: 10px;
+  
+  opacity: 1;
+}
+ 
+/* ------------------------------------------------
+   BOTONES DE CONTACTO
+   ------------------------------------------------ */
+ 
+/* Los botones grandes de la sección de contacto
+   Son diferentes a .btn — más grandes y siempre con ícono + texto */
+.contact-btn {
+  display: inline-flex;
+  
+  align-items: center;
+  
+  gap: 10px;
+  
+  padding: 0.875rem 1.75rem; /* más grandes que .btn */
+  
+  border: 0.5px solid var(--border);
+  
+  color: var(--text);
+  
+  font-size: 0.875rem;
+  
+  font-weight: 500;
+  
+  letter-spacing: 0.06em;
+  
+  transition: all var(--transition);
+  
+  text-decoration: none;
+}
+ 
+/* Al pasar el mouse el borde y texto se vuelven rojos */
+.contact-btn:hover {
+  border-color: var(--accent);
+  
+  color: var(--accent);
+  
+  opacity: 1;
+}
+ 
+.contact-btn i {
+  font-size: 1rem;
+}
+ 
+/* ------------------------------------------------
+   BOTÓN DE CAMBIO DE TEMA
+   ------------------------------------------------ */
+ 
+/* El botón de luna/sol en el navbar — ID porque solo hay uno */
+#theme-toggle {
+  width: 36px;
+  
+  height: 36px;
+  
+  display: flex;
+  
+  align-items: center;
+  
+  justify-content: center;
+  
+  border: 0.5px solid var(--border);
+  
+  color: var(--text-muted);
+  
+  font-size: 0.9rem;
+  
+  background: transparent;
+  
+  transition: all var(--transition);
+}
+ 
+/* Al pasar el mouse el borde y el ícono se vuelven rojos */
+#theme-toggle:hover {
+  
+    border-color: var(--accent);
+  
+    color: var(--accent);
+}
+ 
+/* ------------------------------------------------
+   BOTÓN DE MENÚ MÓVIL
+   ------------------------------------------------ */
+ 
+/* El botón de hamburguesa — ID porque solo hay uno
+   OCULTO en escritorio, solo visible en móvil */
+#menu-toggle {
+  width: 36px;
+
+  height: 36px;
+
+  display: none; /* oculto por defecto en escritorio */
+
+  align-items: center;
+  
+  justify-content: center;
+  
+  border: 0.5px solid var(--border);
+  
+  color: var(--text-muted);
+  
+  font-size: 0.9rem;
+  
+  background: transparent;
+  
+  transition: all var(--transition);
+}
+ 
+#menu-toggle:hover {
+  
+    border-color: var(--accent);
+  
+    color: var(--accent);
+}
+ 
+/* En pantallas de 768px o menos el botón se MUESTRA */
+@media (max-width: 768px) {
+  #menu-toggle {
+  
+    display: flex;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Diego Monsalve — Fullstack Developer</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS — siempre en este orden -->
+  <link rel="stylesheet" href="css/style_global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/animation.css" />
+</head>
+
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav id="navbar">
+    <a href="#inicio" id="nav-logo">
+      <div id="logo-circle">JDM</div>
+    </a>
+
+    <ul id="nav-links">
+      <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+      <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+      <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+      <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+      <li><a href="#educacion" class="nav-link">Educación</a></li>
+      <li><a href="#contacto" class="nav-link">Contacto</a></li>
+    </ul>
+
+    <div id="nav-actions">
+      <button id="theme-toggle" aria-label="Cambiar tema">
+        <i class="fa-solid fa-moon" id="theme-icon"></i>
+      </button>
+      <button id="menu-toggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="inicio">
+    <div id="hero-content">
+      <p class="section-tag">
+        <span class="tag-line"></span>
+        Fullstack Developer
+      </p>
+
+      <h1 id="hero-title">
+        Juan Diego<br />
+        Monsalve<span class="accent-dot">.</span>
+      </h1>
+
+      <p id="hero-roles">
+        <span class="role">Backend</span>
+        <span class="role-sep">·</span>
+        <span class="role">Frontend</span>
+        <span class="role-sep">·</span>
+        <span class="role">Database</span>
+      </p>
+
+      <p id="hero-desc">
+        Construyo aplicaciones completas, del servidor a la interfaz.
+        Código limpio, soluciones escalables, desde Colombia.
+      </p>
+
+      <div id="hero-btns">
+        <a href="#proyectos" class="btn btn-primary">
+          Ver proyectos <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#contacto" class="btn btn-secondary">Contacto</a>
+      </div>
+
+      <div id="hero-social">
+        <a href="https://github.com/tu-usuario" target="_blank" class="social-link" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="social-link" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="mailto:tuemail@gmail.com" class="social-link" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <div id="hero-kanji" aria-hidden="true">全</div>
+  </section>
+
+  <!-- ===================== SOBRE MÍ ===================== -->
+  <section id="sobre-mi">
+    <div class="section-header reveal">
+      <p class="section-tag">
+        <span class="tag-line"></span>
+        Sobre mí
+      </p>
+      <h2 class="section-title">Apasionado por construir<br />cosas que funcionan</h2>
+    </div>
+
+    <div id="about-grid">
+      <div id="about-text" class="reveal">
+        <p>
+          Soy desarrollador fullstack con enfoque en construir aplicaciones
+          web completas y bien estructuradas. Me especializo en el stack
+          completo: desde la base de datos hasta la interfaz de usuario.
+        </p>
+        <p>
+          Cada proyecto es una oportunidad de aprender algo nuevo. Me importa
+          el código limpio, las buenas prácticas y que lo que construyo
+          realmente funcione.
+        </p>
+
+        <div id="about-info">
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot accent"></i>
+            <span>Colombia</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-code accent"></i>
+            <span>Fullstack Developer</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-graduation-cap accent"></i>
+            <span>En formación continua</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="about-stats" class="reveal">
+        <div class="stat-card">
+          <span class="stat-number">5<span class="accent-dot">+</span></span>
+          <span class="stat-label">Proyectos completados</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">10<span class="accent-dot">+</span></span>
+          <span class="stat-label">Tecnologías en formación</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Capas del stack</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">100<span class="accent-dot">%</span></span>
+          <span class="stat-label">Comprometido</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HABILIDADES ===================== -->
+  <section id="habilidades">
+    <div class="section-header reveal">
+      <p class="section-tag">
+        <span class="tag-line"></span>
+        Stack técnico
+      </p>
+      <h2 class="section-title">Habilidades</h2>
+    </div>
+
+    <div id="skills-grid">
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title">
+          <i class="fa-solid fa-server accent"></i>
+          Backend
+        </h3>
+        <div class="skill-list">
+          <div class="skill-item">
+            <i class="fa-brands fa-python"></i>
+            <span>Python</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-brands fa-node-js"></i>
+            <span>Node.js</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Flask</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-solid fa-plug"></i>
+            <span>REST APIs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title">
+          <i class="fa-solid fa-display accent"></i>
+          Frontend
+        </h3>
+        <div class="skill-list">
+          <div class="skill-item">
+            <i class="fa-brands fa-html5"></i>
+            <span>HTML5</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-brands fa-css3-alt"></i>
+            <span>CSS3</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-brands fa-js"></i>
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-brands fa-react"></i>
+            <span>React</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title">
+          <i class="fa-solid fa-database accent"></i>
+          Base de datos
+        </h3>
+        <div class="skill-list">
+          <div class="skill-item">
+            <i class="fa-solid fa-database"></i>
+            <span>PostgreSQL</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-solid fa-leaf"></i>
+            <span>MongoDB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title">
+          <i class="fa-solid fa-wrench accent"></i>
+          Herramientas
+        </h3>
+        <div class="skill-list">
+          <div class="skill-item">
+            <i class="fa-brands fa-git-alt"></i>
+            <span>Git</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-brands fa-docker"></i>
+            <span>Docker</span>
+          </div>
+          <div class="skill-item">
+            <i class="fa-brands fa-figma"></i>
+            <span>Figma</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== PROYECTOS ===================== -->
+  <section id="proyectos">
+    <div class="section-header reveal">
+      <p class="section-tag">
+        <span class="tag-line"></span>
+        Portafolio
+      </p>
+      <h2 class="section-title">Proyectos</h2>
+    </div>
+
+    <div id="projects-grid">
+
+      <article class="project-card reveal">
+        <div class="project-header">
+          <span class="project-type">Fullstack</span>
+          <div class="project-links">
+            <a href="#" target="_blank" aria-label="GitHub del proyecto">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" target="_blank" aria-label="Ver proyecto en vivo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <h3 class="project-title">Nombre del proyecto</h3>
+        <p class="project-desc">
+          Descripción breve del proyecto. Qué hace, qué problema resuelve.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">PostgreSQL</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-header">
+          <span class="project-type">Frontend</span>
+          <div class="project-links">
+            <a href="#" target="_blank" aria-label="GitHub del proyecto">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" target="_blank" aria-label="Ver proyecto en vivo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <h3 class="project-title">Nombre del proyecto</h3>
+        <p class="project-desc">
+          Descripción breve del proyecto. Qué hace, qué problema resuelve.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================== EDUCACIÓN ===================== -->
+  <section id="educacion">
+    <div class="section-header reveal">
+      <p class="section-tag">
+        <span class="tag-line"></span>
+        Formación
+      </p>
+      <h2 class="section-title">Educación</h2>
+    </div>
+
+    <div id="edu-grid">
+
+      <div class="edu-card reveal">
+        <div class="edu-header">
+          <span class="edu-year">2024 — Actualidad</span>
+          <span class="edu-type">Técnico</span>
+        </div>
+        <h3 class="edu-title">Técnico en Programación de Software</h3>
+        <p class="edu-place">SENA</p>
+        <p class="edu-desc">
+          Formación integral en desarrollo de software, bases de datos
+          y metodologías ágiles.
+        </p>
+        <a href="pages/certificado-tecnico.html" class="edu-link">
+          Ver certificado <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== CONTACTO ===================== -->
+  <section id="contacto">
+    <div class="section-header reveal">
+      <p class="section-tag">
+        <span class="tag-line"></span>
+        Conectemos
+      </p>
+      <h2 class="section-title">¿Tienes un proyecto<br />en mente?</h2>
+    </div>
+
+    <p id="contact-desc" class="reveal">
+      Siempre estoy abierto a nuevas oportunidades y colaboraciones.
+    </p>
+
+    <div id="contact-links" class="reveal">
+      <a href="mailto:tuemail@gmail.com" class="contact-btn">
+        <i class="fa-solid fa-envelope"></i>
+        Email
+      </a>
+      <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="contact-btn">
+        <i class="fa-brands fa-linkedin"></i>
+        LinkedIn
+      </a>
+      <a href="https://github.com/tu-usuario" target="_blank" class="contact-btn">
+        <i class="fa-brands fa-github"></i>
+        GitHub
+      </a>
+      <a href="https://wa.me/57XXXXXXXXXX" target="_blank" class="contact-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="footer">
+    <div id="footer-content">
+      <span id="footer-name">
+        Juan Diego Monsalve<span class="accent-dot">.</span>
+      </span>
+      <span id="footer-copy">© 2025 — Construido con código y café</span>
+      <div id="footer-social">
+        <a href="https://github.com/tu-usuario" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/tu-usuario" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

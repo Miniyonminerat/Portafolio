@@ -1,0 +1,198 @@
+
+/* Empezamos creando el :root para definir las variables de color que usaremos en todo el sitio 
+============================================================
+             1. CSS BASE. SISTEMA DE DISEÑO  
+============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+
+:root {
+
+    /* Colores principales */
+    --color-primary: #ffffff; /* Blanco principal */
+    --color-primary-dark: #f5f5f5; /* Blanco oscuro para sombras en cards */
+    --color-secondary: #000000; /* Negro para fondos secundarios */
+    --color-secondary-white: #2e2a2af8; /*Negro un poco grisaceo */
+
+
+    /*Colores Textos */
+
+    --text: #000; /* Texto principal */
+    --text-muted: #666; /* Texto suave para subtítulos o información secundaria */
+
+    /*Colores Botones */
+    
+    --accent: #fd0000; /* Rojo para acentos */
+    --accent-hover: #a50000; /* Rojo oscuro sombras y decoracion */
+
+
+    /* Tipografias */
+
+    --font-body: 'Inter', sans-serif; /* Fuente principal para el cuerpo del texto */
+    --font-display: 'Noto Serif JP', serif; /* Fuente para títulos y elementos destacados */
+
+    /*Espaciado o Margenes */
+
+    --space-xs: 0.5rem; /* Espacio para elementos pequeños */
+    --space-sm: 1rem; /* Espacio para elementos medianos */
+    --space-md: 2rem; /* Espacio para elementos grandes */
+    --space-lg: 4rem; /* Espacio para elementos muy grandes */
+    --space-xl: 6rem; /* Espacio para elementos extremadamente grandes */
+
+    /* Bordes */
+
+    --radius-sm: 4px; /* Para bordes pequeños */
+    --radius-md: 8px; /* Para bordes redondeados */
+    --radius-full: 9999px; /* Para bordes completamente redondeados */
+
+    /* Transicion global */
+
+    --transition: 0.3s ease; /* Transición suave para interacciones */
+}
+
+/* Proseguimos con el modo oscuro ============================================================
+             2. MODO OSCURO
+============================================================ */
+
+[data-theme="dark"] {
+    --color-primary: #0a0a0a; /* Fondo oscuro principal */
+    --color-primary-white: #1a1a1a; /* Fondo oscuro para sombras en cards */
+    --color-secondary: #ffffff; /* Blanco para fondos secundarios */
+    --color-secondary-dark: #f5f5f5; /* Blanco para fondos secundarios */
+
+    --text: #f0f0f0; /* Texto claro para modo oscuro */
+    --text-muted: #999; /* Texto suave para subtítulos o información secundaria en modo oscuro */
+    --border: rgba(255, 255, 255, 0.1); /* Bordes suaves para modo oscuro */
+
+}
+
+/* Ahora aplicamos un reset básico para eliminar márgenes y padding por defecto, y establecer la tipografía global
+============================================================
+             3. RESET Y ESTILOS BASE
+============================================================ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Suaviza el desplazamiento al hacer clic en enlaces internos */
+}
+
+
+body {
+    background-color: var(--color-primary); /* Usamos la variable para el fondo principal */
+    color: var(--text); /* Usamos la variable para el color del texto */
+    font-family: var(--font-body); /* Usamos la variable para la tipografía principal */
+    font-size: 16px; /* Tamaño de fuente base para el cuerpo del texto */
+    line-height: 1.7; /* Altura de línea para mejorar la legibilidad */
+    transition: background-color var(--transition), color var(--transition); /* Transición suave para cambios de tema */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal  en dispositivos móviles */ 
+}
+
+/* Tipografia*/
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--font-display); /* Usamos la variable para la tipografía de títulos */
+    font-weight: 700; /* Negrita para títulos */
+    line-height: 1.2; /* Altura de línea para títulos */
+    color: var(--text); /* Usamos la variable para el color de los títulos */
+}
+
+p {
+    color: var(--text); /* Usamos la variable para el color de los párrafos */
+    line-height: 1.8; /* Altura de línea para mejorar la legibilidad de los párrafos */
+}
+
+
+a {
+    color: var(--accent); /* Usamos la variable para el color de los enlaces */
+    text-decoration: none; /* Eliminamos el subrayado por defecto */
+    transition: opacity var(--transition); /* Transición suave para cambios de color en enlaces */
+}
+
+a:hover {
+    opacity: 0.75; /* Efecto de opacidad al pasar el mouse sobre los enlaces */
+}
+
+ul { 
+    list-style: none; /* Eliminamos los puntos de las listas */
+}
+
+
+img {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho de su contenedor */
+    display: block; /* Elimina el espacio debajo de las imágenes */
+}
+
+button {
+
+    cursor: pointer; /* Cambia el cursor a pointer para indicar que es un elemento interactivo */
+
+    border: none; /* Eliminamos el borde por defecto de los botones */
+
+    background: none; /* Eliminamos el fondo por defecto de los botones */
+
+    font-family: var(--font-body);
+}
+
+
+/* Utilidades globales */
+
+.accent, .accent-dot{
+    color: var(--accent)
+}
+
+.section-tag {
+
+    display: flex; /* Usamos flexbox para centrar el contenido verticalmente */
+
+    align-items: center; /* Alineamos los elementos al centro verticalmente */
+
+    gap: 10px; /* Espacio entre el punto y el texto */
+
+    font-size: 0.7rem; /* Tamaño de fuente más pequeño para el tag */
+
+    letter-spacing: 0.2em; /* Espaciado entre letras */
+
+    text-transform: uppercase; /* Convertimos el texto a mayúsculas */
+
+    color: var(--accent); /* Usamos la variable para el color del texto */
+
+    font-weight: 500; /* Peso de fuente para el tag */
+
+    margin-bottom: 0.7rem; /* Espacio debajo del tag */
+}
+
+
+
+.tag-line {
+
+    display: inline-block; /* Hacemos que el tag sea un bloque en línea para poder aplicar padding */
+
+    width: 24px; /* Ancho del tag */
+
+    height: 1px; /* Altura del tag */
+
+    background-color: var(--accent); /* Usamos la variable para el color del tag */
+}
+
+.section-title {
+
+    font-size: clamp(1.6rem, 3vw, 2.2rem); /* Tamaño de fuente responsivo para títulos de sección */
+
+    font-weight: 700; /* Negrita para títulos de sección */
+
+    color: var(--text); /* Usamos la variable para el color de los títulos de sección */
+
+    line-height: 1.2; /* Altura de línea para títulos de sección */
+
+}
+
+.section-header {
+
+    margin-bottom: var(--space-md);
+
+}
