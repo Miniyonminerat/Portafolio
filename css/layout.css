@@ -1,0 +1,599 @@
+/* ================================================
+   LAYOUT.CSS — Estructura y secciones
+   Juan Diego Monsalve Martinez
+   ================================================
+   Controla la ESTRUCTURA y POSICIONAMIENTO de la página.
+   Define cómo se organizan las secciones, su espaciado,
+   los grids y el comportamiento en móvil.
+   ================================================ */
+
+/* ------------------------------------------------
+   BARRA DE NAVEGACIÓN
+   ------------------------------------------------ */
+
+/* El navbar fijo en la parte superior — ID porque solo hay uno */
+#navbar {
+  position: fixed; /* se queda arriba aunque el usuario haga scroll */
+  
+  top: 0;
+  
+  left: 0;
+  
+  width: 100%;
+  
+  height: var(--nav-height); /* 70px definido en base.css */
+  
+  display: flex;
+  
+  align-items: center;
+  
+  justify-content: space-between; /* logo izq, links centro, botones der */
+  
+  padding: 0 var(--space-lg);     /* 4rem de espacio horizontal */
+  
+  background-color: var(--color-primary);
+  
+  border-bottom: 0.5px solid var(--border-soft);
+
+  z-index: 1000; /* siempre encima de todo el contenido */
+  
+  transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+/* Clase que agrega JavaScript cuando el usuario baja 20px
+   Hace el borde inferior un poco más visible */
+#navbar.scrolled {
+  border-bottom-color: var(--border);
+}
+
+/* El enlace que envuelve el logo JDM */
+#nav-logo {
+  text-decoration: none;
+  
+  flex-shrink: 0; /* evita que el logo se encoja si el espacio es poco */
+}
+
+/* La lista <ul> con todos los enlaces de navegación */
+#nav-links {
+  display: flex;
+  
+  align-items: center;
+  
+  gap: var(--space-md); /* espacio entre cada link */
+}
+
+/* Cada enlace individual del navbar */
+.nav-link {
+  font-size: 0.75rem;
+  
+  letter-spacing: 0.1em;
+  
+  text-transform: uppercase;
+  
+  color: var(--text-muted); /* gris apagado por defecto */
+  
+  text-decoration: none;
+  
+  font-weight: 500;
+  
+  transition: color var(--transition);
+  
+  position: relative; /* necesario para posicionar el subrayado animado */
+}
+
+/* El subrayado animado debajo de cada link
+   Es un pseudo-elemento — no existe en el HTML, lo crea el CSS */
+.nav-link::after {
+  content: '';
+  
+  position: absolute;
+  
+  bottom: -4px; /* justo debajo del texto */
+  
+  left: 0;
+  
+  width: 0;                       /* empieza invisible (ancho cero) */
+  
+  height: 1px;
+  
+  background-color: var(--accent); /* línea roja */
+  
+  transition: width var(--transition); /* el ancho se anima */
+}
+
+/* Al pasar el mouse o cuando el link está activo:
+   texto oscuro + subrayado se expande al 100% */
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text);
+  
+  opacity: 1;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%; /* la línea se expande de 0 a todo el ancho */
+}
+
+/* La clase .active la gestiona JavaScript según qué sección está visible */
+
+/* El contenedor de los botones del lado derecho del navbar */
+#nav-actions {
+  display: flex;
+  
+  align-items: center;
+  
+  gap: 8px;
+}
+
+/* --- NAVBAR EN MÓVIL (768px o menos) --- */
+@media (max-width: 768px) {
+  #navbar {
+    padding: 0 var(--space-sm); /* menos espacio horizontal en móvil */
+  }
+
+  /* En móvil el menú se convierte en un dropdown debajo del navbar */
+  #nav-links {
+    position: fixed;
+    
+    top: var(--nav-height); /* justo debajo del navbar */
+    
+    left: 0;
+    
+    width: 100%;
+    
+    flex-direction: column;  /* links apilados verticalmente */
+    
+    align-items: flex-start;
+    
+    gap: 0;
+    
+    background-color: var(--color-primary);
+    
+    border-bottom: 0.5px solid var(--border);
+    
+    padding: var(--space-sm) var(--space-md);
+
+
+    /* OCULTO por defecto — el menú está fuera de la pantalla hacia arriba */
+    
+    transform: translateY(-100%);
+    
+    opacity: 0;
+    
+    pointer-events: none; /* los clicks pasan a través */
+    
+    transition: transform var(--transition), opacity var(--transition);
+  }
+
+  /* Clase que agrega JavaScript al hacer click en el hamburger
+     El menú baja y se hace visible */
+  #nav-links.open {
+    transform: translateY(0);
+    
+    opacity: 1;
+    
+    pointer-events: all; /* vuelve a ser interactuable */
+  }
+
+  /* Cada link en móvil ocupa todo el ancho con separadores */
+  .nav-link {
+    padding: 12px 0;
+    
+    width: 100%;
+    
+    border-bottom: 0.5px solid var(--border-soft);
+    
+    font-size: 0.85rem; /* un poco más grande para facilitar el toque */
+  }
+
+}
+
+/* ------------------------------------------------
+   ESPACIADO GENERAL DE SECCIONES
+   Se aplica a TODAS las etiquetas <section>
+   ------------------------------------------------ */
+section {
+  padding: var(--space-xl) var(--space-lg); /* 6rem arriba/abajo, 4rem lados */
+  
+  max-width: 1100px;  /* el contenido nunca supera los 1100px */
+  
+  margin: 0 auto;     /* centra el contenido horizontalmente */
+}
+
+/* ------------------------------------------------
+   HERO (#inicio)
+   ------------------------------------------------ */
+
+/* La primera sección visible al cargar la página */
+#inicio {
+  min-height: 100vh; /* ocupa al menos toda la altura de la ventana */
+  
+  display: flex;
+  
+  align-items: center; /* centra verticalmente el contenido */
+  
+  /* Empuja el contenido hacia abajo para que no quede tapado por el navbar */
+  
+  padding-top: calc(var(--nav-height) + var(--space-lg));
+  
+  position: relative; /* necesario para posicionar el kanji con absolute */
+  
+  overflow: hidden;   /* recorta el kanji si se sale del área */
+}
+
+/* El contenedor del texto y botones del hero */
+#hero-content {
+  max-width: 600px; /* el texto no se extiende demasiado en pantallas anchas */
+  
+  z-index: 1;       /* se mantiene encima del kanji decorativo */
+}
+
+/* El nombre principal — texto más grande de toda la página
+   clamp(mínimo, ideal, máximo) lo hace responsivo */
+#hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  
+  font-weight: 700;
+  
+  line-height: 1.05;
+  
+  color: var(--text);
+  
+  margin-bottom: 0.75rem;
+}
+
+/* La línea "Backend · Frontend · Database" */
+#hero-roles {
+  display: flex;
+  
+  align-items: center;
+  
+  gap: 10px;
+  
+  font-size: 0.85rem;
+  
+  letter-spacing: 0.08em;
+  
+  color: var(--text-muted);
+  
+  margin-bottom: var(--space-sm);
+}
+
+/* Cada palabra de rol */
+.role {
+  color: var(--text-muted);
+}
+
+/* El punto separador entre roles — rojo */
+.role-sep {
+  color: var(--accent);
+}
+
+/* El párrafo corto de presentación */
+#hero-desc {
+  font-size: 1rem;
+  
+  color: var(--text-muted);
+  
+  max-width: 460px; /* angosto para fácil lectura */
+  
+  margin-bottom: var(--space-md);
+}
+
+/* El contenedor de los dos botones */
+#hero-btns {
+  display: flex;
+  
+  align-items: center;
+  
+  gap: var(--space-sm);
+  
+  margin-bottom: var(--space-md);
+  
+  flex-wrap: wrap; /* si no caben, el segundo botón baja a otra línea */
+
+  align-items: flex-start;
+}
+
+/* Los íconos de redes sociales */
+#hero-social {
+  display: flex;
+  
+  gap: 10px;
+}
+
+/* El carácter japonés 全 decorativo de fondo
+   Enorme y casi invisible, puramente decorativo */
+#hero-kanji {
+  position: absolute;           /* fuera del flujo normal */
+  
+  right: -20px;
+  
+  top: 50%;
+  
+  transform: translateY(-50%);  /* centrado verticalmente */
+  
+  font-family: var(--font-display);
+  
+  font-size: clamp(120px, 20vw, 200px); /* enorme y responsivo */
+  
+  font-weight: 300;  /* peso muy ligero (delgado) */
+  
+  color: var(--text);
+  
+  opacity: 0.04;     /* apenas visible, solo para dar atmósfera */
+  
+  line-height: 1;
+  
+  pointer-events: none; /* los clicks lo atraviesan */
+  
+  user-select: none;    /* no se puede seleccionar/copiar */
+  
+  z-index: 0;           /* detrás del contenido */
+}
+
+@media (max-width: 768px) {
+  #inicio {
+    padding-top: calc(var(--nav-height) + var(--space-md));
+  }
+
+  #hero-kanji {
+    font-size: 140px;
+    
+    right: -30px;
+    
+    opacity: 0.03;
+  }
+}
+
+/* ------------------------------------------------
+   SOBRE MÍ (#sobre-mi)
+   ------------------------------------------------ */
+
+#sobre-mi {
+  border-top: 0.5px solid var(--border-soft); /* separador sutil con el hero */
+}
+
+/* Grid de dos columnas: texto a la izquierda, estadísticas a la derecha */
+#about-grid {
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+  
+  gap: var(--space-lg);
+  
+  align-items: start; /* ambas columnas empiezan desde arriba */
+}
+
+
+/* Columna izquierda — el texto */
+#about-text {
+  display: flex;
+  
+  flex-direction: column;
+  
+  gap: var(--space-sm);
+}
+
+/* La info de ubicación, rol y formación al fondo del texto
+   Separada del texto con una línea sutil arriba */
+#about-info {
+  display: flex;
+  
+  flex-direction: column;
+  
+  gap: 10px;
+  
+  margin-top: var(--space-sm);
+  
+  padding-top: var(--space-sm);
+  
+  border-top: 0.5px solid var(--border-soft);
+}
+
+/* Columna derecha — las 4 tarjetas de estadísticas en grid 2x2 */
+#about-stats {
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr;
+  
+  gap: 10px;
+}
+
+/* En móvil las dos columnas se apilan verticalmente */
+@media (max-width: 768px) {
+  #about-grid {
+    grid-template-columns: 1fr;
+    
+    gap: var(--space-md);
+  }
+}
+
+/* ------------------------------------------------
+   HABILIDADES (#habilidades)
+   ------------------------------------------------ */
+
+/* Fondo ligeramente diferente para alternar visualmente con las secciones blancas */
+#habilidades {
+  border-top: 0.5px solid var(--border-soft);
+  
+  background-color: var(--color-primary);
+}
+
+/* Grid responsivo para las 4 tarjetas de grupos de habilidades
+   auto-fit + minmax: cada tarjeta mide mínimo 220px,
+   y el grid decide automáticamente cuántas columnas caben */
+#skills-grid {
+  display: grid;
+  
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  
+  gap: var(--space-sm);
+}
+
+/* ------------------------------------------------
+   PROYECTOS (#proyectos)
+   ------------------------------------------------ */
+
+#proyectos {
+  border-top: 0.5px solid var(--border-soft);
+}
+
+/* Grid responsivo para las tarjetas de proyectos
+   Cada tarjeta mide mínimo 300px */
+#projects-grid {
+  display: grid;
+  
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  
+  gap: var(--space-sm);
+}
+
+/* ------------------------------------------------
+   EDUCACIÓN (#educacion)
+   ------------------------------------------------ */
+
+/* Fondo suave igual que habilidades — alterna visualmente */
+#educacion {
+  border-top: 0.5px solid var(--border-soft);
+  
+  background-color: var(--color-primary);
+}
+
+/* Las tarjetas de educación se apilan una debajo de la otra */
+#edu-grid {
+  display: flex;
+  
+  flex-direction: column;
+  
+  gap: var(--space-sm);
+}
+
+/* ------------------------------------------------
+   CONTACTO (#contacto)
+   ------------------------------------------------ */
+
+#contacto {
+  border-top: 0.5px solid var(--border-soft);
+  
+  text-align: center; /* todo el contenido centrado */
+}
+
+/* El texto de invitación encima de los botones */
+#contact-desc {
+  font-size: 1rem;
+  
+  color: var(--text-muted);
+  
+  max-width: 400px;
+  
+  margin: 0 auto var(--space-md); /* centrado horizontalmente */
+}
+
+
+/* La fila de botones de contacto — centrada y con salto de línea si no caben */
+#contact-links {
+  display: flex;
+  
+  flex-wrap: wrap;
+  
+  gap: 12px;
+  
+  justify-content: center;
+}
+
+/* ------------------------------------------------
+   FOOTER
+   ------------------------------------------------ */
+
+/* El pie de página — la línea roja en la parte superior es intencional
+   y hace parte del diseño: es la misma línea que separa el contenido
+   del footer, usando el color acento en lugar de un gris sutil */
+#footer {
+  border-top: 1px solid var(--accent); /* línea roja visible al tope del footer */
+  
+  padding: var(--space-md) var(--space-lg);
+}
+
+/* El contenido del footer en tres partes: nombre — copyright — redes */
+#footer-content {
+  max-width: 1100px;
+  
+  margin: 0 auto;
+  
+  display: flex;
+  
+  align-items: center;
+  
+  justify-content: space-between; /* nombre izq, copyright centro, redes der */
+  
+  
+  flex-wrap: wrap; /* en móvil se apilan */
+  
+  gap: var(--space-sm);
+}
+
+/* "Juan Diego Monsalve." en Noto Serif JP */
+#footer-name {
+  font-family: var(--font-display);
+  
+  font-size: 1rem;
+  
+  color: var(--text-muted);
+}
+
+/* El texto de copyright — muy sutil */
+#footer-copy {
+  font-size: 0.8rem;
+  
+  color: var(--text-muted);
+  
+  opacity: 0.6;
+}
+
+/* Los íconos de redes en el footer */
+#footer-social {
+  display: flex;
+  
+  gap: 12px;
+}
+
+
+#footer-social a {
+  color: var(--text-muted);
+  
+  font-size: 1rem;
+  
+  transition: color var(--transition);
+}
+
+/* Al pasar el mouse el ícono se vuelve rojo */
+#footer-social a:hover {
+  color: var(--accent);
+  
+  opacity: 1;
+}
+
+/* ------------------------------------------------
+   MÓVIL GENERAL (768px o menos)
+   ------------------------------------------------ */
+@media (max-width: 768px) {
+  /* Todas las secciones reducen su padding en móvil */
+  section {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  #footer {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  /* El footer se apila verticalmente en móvil */
+  #footer-content {
+    flex-direction: column;
+    
+    align-items: flex-start;
+    
+    gap: 8px;
+  }
+}

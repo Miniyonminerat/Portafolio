@@ -1,0 +1,256 @@
+/* ================================================
+   ANIMATIONS.CSS — Animaciones y transiciones
+   Juan Diego Monsalve Martinez
+   ================================================
+   Maneja TODAS las animaciones del sitio.
+   Se carga de ÚLTIMO para poder sobreescribir
+   transiciones si es necesario.
+   La mayoría se activan al cargar la página o cuando
+   JavaScript agrega/quita clases.
+   ================================================ */
+
+/* ------------------------------------------------
+   KEYFRAMES — Definición de animaciones
+   Definir un @keyframes no hace nada por sí solo.
+   Hay que aplicarlo con: animation: nombre duración timing
+   ------------------------------------------------ */
+
+/* Elemento aparece desde abajo mientras se hace visible
+   Usado para: título del hero, descripción, botones */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    
+    transform: translateY(24px); /* empieza 24px más abajo */
+  }
+  to {
+    opacity: 1;
+    
+    transform: translateY(0);   /* termina en su posición natural */
+  }
+}
+
+
+
+/* Elemento aparece solo con fade, sin movimiento
+   Usado para: el kanji decorativo del hero */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  
+  to   { opacity: 1; }
+}
+
+/* Elemento aparece deslizándose desde la izquierda
+   Usado para: la etiqueta de sección del hero "— Fullstack Developer" */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    
+    transform: translateX(-24px); /* empieza 24px a la izquierda */
+  }
+  to {
+    opacity: 1;
+    
+    transform: translateX(0);    /* termina en su posición natural */
+  }
+}
+
+/* ------------------------------------------------
+   ANIMACIONES DE ENTRADA DEL HERO
+   Se activan al cargar la página por primera vez.
+   Cada elemento tiene un delay diferente para que
+   aparezcan en cascada uno por uno.
+   "forwards" significa que el elemento se queda en el
+   estado final en vez de volver al estado inicial.
+   ------------------------------------------------ */
+
+/* 1ro en aparecer — la etiqueta pequeña "— Fullstack Developer" */
+#inicio .section-tag {
+  animation: slideInLeft 0.6s ease forwards;
+  
+  animation-delay: 0.1s;
+  
+  opacity: 0; /* empieza invisible mientras espera el delay */
+}
+
+/* 2do — el nombre principal */
+#hero-title {
+  animation: fadeUp 0.7s ease forwards;
+  
+  animation-delay: 0.2s;
+  
+  opacity: 0;
+}
+
+
+
+/* 3ro — la línea "Backend · Frontend · Database" */
+#hero-roles {
+  animation: fadeUp 0.7s ease forwards;
+  
+  animation-delay: 0.35s;
+  
+  opacity: 0;
+}
+
+/* 4to — el párrafo de descripción */
+#hero-desc {
+  animation: fadeUp 0.7s ease forwards;
+  
+  animation-delay: 0.45s;
+  
+  opacity: 0;
+}
+
+/* 5to — los botones de acción */
+#hero-btns {
+  animation: fadeUp 0.7s ease forwards;
+  
+  animation-delay: 0.55s;
+  
+  opacity: 0;
+}
+
+/* 6to — los íconos de redes sociales */
+#hero-social {
+  animation: fadeUp 0.7s ease forwards;
+  
+  animation-delay: 0.65s;
+  
+  opacity: 0;
+}
+
+
+
+/* Último en aparecer — el kanji decorativo de fondo, muy lento */
+#hero-kanji {
+  animation: fadeIn 1.2s ease forwards;
+  
+  animation-delay: 0.8s;
+  
+  opacity: 0;
+}
+
+/* ------------------------------------------------
+   SCROLL REVEAL
+   Los elementos con class="reveal" empiezan ocultos.
+   JavaScript usa IntersectionObserver para detectar
+   cuando el elemento entra al viewport y le agrega
+   la clase "visible", que activa la transición CSS.
+   ------------------------------------------------ */
+
+/* Estado INICIAL — el elemento está oculto y desplazado hacia abajo */
+.reveal {
+  opacity: 0;
+  
+  transform: translateY(30px); /* 30px más abajo de su posición natural */
+  
+  /* Cuando opacity o transform cambien, se animan suavemente */
+  
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Estado VISIBLE — clase que agrega JavaScript cuando el elemento
+   entra al viewport. El CSS transition anima el cambio automáticamente */
+.reveal.visible {
+  opacity: 1;
+  
+  transform: translateY(0); /* vuelve a su posición natural */
+}
+
+/* Delays escalonados para elementos hermanos con class="reveal"
+   Cuando varios cards están en un grid, aparecen uno por uno
+   en vez de todos al mismo tiempo — efecto de ola */
+.reveal:nth-child(1) { transition-delay: 0s;   }
+
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+
+.reveal:nth-child(4) { transition-delay: 0.3s; }
+
+/* ------------------------------------------------
+   EFECTO DE BRILLO EN BOTÓN PRIMARIO
+   ------------------------------------------------ */
+
+/* El botón primario tiene una capa blanca encima que aparece al hover
+   Necesita position: relative y overflow: hidden definidos en components.css */
+.btn-primary::after {
+  
+  position: absolute;
+  
+  inset: 0; /* cubre todo el botón */
+  
+  background: rgba(255, 255, 255, 0.1); /* capa blanca al 10% */
+  
+  opacity: 0;                           /* invisible por defecto */
+  
+  transition: opacity var(--transition);
+}
+
+/* Al pasar el mouse el brillo aparece */
+.btn-primary:hover::after {
+  opacity: 1;
+}
+
+/* ------------------------------------------------
+   ANIMACIÓN DE PULSO EN EL LOGO
+   ------------------------------------------------ */
+
+/* Un brillo rojo suave que pulsa alrededor del logo JDM al hacer hover */
+@keyframes pulse-border {
+  0%, 100% {
+    /* sin brillo */
+    box-shadow: 0 0 0 0px rgba(192, 57, 43, 0);
+  }
+  50% {
+    /* brillo rojo al 12% de opacidad, expandido 4px */
+    box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.12);
+  }
+}
+
+/* Al pasar el mouse sobre el logo, el pulso se activa en bucle */
+#logo-circle:hover {
+  animation: pulse-border 1s ease infinite;
+}
+
+/* ------------------------------------------------
+   ACCESIBILIDAD — Respeto por el movimiento reducido
+   Algunos usuarios tienen configurado en su sistema
+   que prefieren poca o ninguna animación
+   (por mareo, epilepsia u otras razones).
+   Esta media query detecta esa preferencia y
+   desactiva todas las animaciones.
+   ------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  /* Hace que todas las animaciones y transiciones sean instantáneas */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Los elementos .reveal se muestran inmediatamente sin animación */
+  .reveal {
+    opacity: 1;
+    
+    transform: none;
+  }
+}
+
+
+.skill-item:hover{
+
+  transform: scale(1.1) ;
+  
+  transition: transform 0.1s ease;
+  
+
+}
+
+.tag:hover{
+
+  transform: scale(1.1);
+
+  transition: transform 0.1s ease;
+}

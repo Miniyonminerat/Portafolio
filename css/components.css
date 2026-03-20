@@ -31,6 +31,8 @@
     border: none; /* Eliminamos el borde por defecto del botón */
 
     text-decoration: none; /* Eliminamos el subrayado de los enlaces que son botones */
+
+    width: fit-content;
 }
 
 .btn-primary {
@@ -43,10 +45,17 @@
     color: #fff; /* Mantenemos el color del texto al pasar el mouse sobre el botón primario */
 }
 
+.btn-primary:active {
+  transform: scale(0.97); /* baja apenas un 3%, muy sutil */
+  transition: transform 0.1s ease;
+}
+
 .btn-secondary {
     background-color: transparent; /* Fondo transparente para el botón secundario */
     color: var(--text); /* Usamos la variable para el color del texto del botón secundario */
     border: 1px solid var(--border); /* Borde sólido para el botón secundario */
+
+    width: fit-content;
 }
 
 .btn-secondary:hover {
@@ -164,7 +173,7 @@
     
     gap: 4px; /* Espacio entre los elementos dentro de la tarjeta de estadísticas */
 
-    background-color: var(--color-primary-dark); /* Usamos la variable para el color de fondo oscuro en la tarjeta de estadísticas */
+    background-color: var(--color-primary); /* Usamos la variable para el color de fondo oscuro en la tarjeta de estadísticas */
 
     transition: border-color var(--transition); /* Transición suave para el cambio de color del borde al pasar el mouse sobre la tarjeta de estadísticas */
 
@@ -182,7 +191,7 @@
 
     font-weight: 700; /* Peso de fuente para el número de estadísticas */
 
-    color: var(--text); /* Usamos la variable para el color del texto en el número de estadísticas */
+    color: var(--accent); /* Usamos la variable para el color del texto en el número de estadísticas */
 
     line-height: 1; /* Altura de línea para el número de estadísticas */
 }
@@ -228,7 +237,7 @@
 
     border: 0.5px solid var(--border); /* Borde sólido para el grupo de habilidades usando la variable para el color del borde */
 
-    background-color: var(--color-primary-dark); /* Usamos la variable para el color de fondo oscuro en el grupo de habilidades */
+    background-color: var(--color-primary); /* Usamos la variable para el color de fondo oscuro en el grupo de habilidades */
 
     transition: border-color var(--transition); /* Transición suave para el cambio de color del borde al pasar el mouse sobre el grupo de habilidades */
 }
@@ -623,6 +632,8 @@
   background: transparent;
   
   transition: all var(--transition);
+  
+  margin-top: 15px; 
 }
  
 /* Al pasar el mouse el borde y el ícono se vuelven rojos */
