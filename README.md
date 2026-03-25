@@ -29,6 +29,8 @@ Simulación completa de una tienda online:
 
 📌 Enfoque: lógica de e-commerce + experiencia de usuario  
 
+🔗 https://github.com/Miniyonminerat/NexStore
+
 ---
 
 ### 📝 NoteFlow — Aplicación de notas (Colaboración)
