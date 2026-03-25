@@ -1,97 +1,98 @@
-# 🚀 Portafolio - Juan Diego Monsalve Martinez
+# 🎯 Portafolio de Proyectos Web
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?color=00F7FF&size=28&center=true&vCenter=true&width=700&lines=Desarrollador+Web;Frontend+Developer;Construyendo+proyectos+reales;Aprendiendo+cada+día" />
-</p>
+Este repositorio contiene mi portafolio de desarrollo web, donde presento aplicaciones y proyectos construidos con tecnologías frontend.
 
----
-
-## 👨‍💻 Sobre mí
-
-Soy un desarrollador web enfocado en el **frontend**, apasionado por crear aplicaciones modernas, rápidas y funcionales.
-
-Actualmente estoy construyendo proyectos reales para fortalecer mis habilidades y avanzar hacia un nivel profesional.
+El objetivo es mostrar implementaciones reales, lógica funcional y evolución técnica a través de diferentes proyectos.
 
 ---
 
-## 🧠 Habilidades
+## 🧩 ¿Qué encontrarás aquí?
 
-### 💻 Tecnologías
+- Aplicaciones web funcionales  
+- Integración con APIs  
+- Interfaces modernas y responsivas  
+- Lógica de frontend aplicada a casos reales  
+
+---
+
+## 📂 Proyectos incluidos
+
+### ⚡ NexStore — E-commerce funcional
+
+Simulación completa de una tienda online:
+
+- Catálogo dinámico desde API  
+- Carrito de compras interactivo  
+- Flujo de compra simulado  
+- Integración con Stripe (modo prueba)  
+- Selección de dirección con Google Maps  
+
+📌 Enfoque: lógica de e-commerce + experiencia de usuario  
+
+---
+
+### 📝 NoteFlow — Aplicación de notas (Colaboración)
+
+Participación en proyecto colaborativo:
+
+- Trabajo en equipo con Git y GitHub  
+- Gestión de versiones  
+- Contribución a funcionalidades  
+
+📌 Enfoque: colaboración y desarrollo en equipo  
+
+🔗 https://github.com/Sergio-Bustos/NoteFlow  
+
+---
+
+### 🧪 Prolot — Proyecto en desarrollo
+
+Aplicación en construcción enfocada en práctica avanzada:
+
+- Desarrollo desde cero  
+- Experimentación con lógica frontend  
+- Evolución progresiva del proyecto  
+
+📌 Estado: en pausa (próxima reactivación)
+
+🔗 https://github.com/Miniyonminerat/Proyecto-Prolot  
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
 - HTML5  
 - CSS3  
 - JavaScript  
 
-### 🛠️ Herramientas
-- Git  
-- GitHub  
-- VS Code  
+---
+
+## 🧠 Enfoque del portafolio
+
+Este portafolio está orientado a:
+
+- Aplicar conceptos de desarrollo web en proyectos reales  
+- Construir interfaces funcionales y dinámicas  
+- Mejorar progresivamente la calidad del código  
 
 ---
 
-## 📂 Proyectos destacados
+## 📈 Evolución
 
-### ⚡ NexStore
-Tienda online completa con funcionalidades de e-commerce:
+Cada proyecto refleja un nivel diferente de aprendizaje, permitiendo ver la progresión en:
 
-- Consumo de API (FakeStore)
-- Carrito de compras dinámico
-- Simulación de pagos con Stripe
-- Integración con Google Maps
+- Estructura del código  
+- Organización del proyecto  
+- Complejidad de funcionalidades  
 
 ---
 
-### 📝 NoteFlow (Colaborador)
-Aplicación enfocada en gestión de notas.
+## ⚠️ Nota
 
-- Colaborando activamente en el desarrollo
-- Trabajo en equipo y control de versiones
-
-🔗 https://github.com/Sergio-Bustos/NoteFlow
+Algunos proyectos pueden estar en desarrollo o en pausa, ya que forman parte del proceso de aprendizaje continuo.
 
 ---
 
-### 🧪 Prolot (En desarrollo)
-Proyecto personal en construcción.
+## 👨‍💻 Autor
 
-- En pausa temporalmente
-- Próximamente retomado con mejoras importantes
-
-🔗 https://github.com/Miniyonminerat/Proyecto-Prolot
-
----
-
-## 📊 Estadísticas
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Miniyonminerat&show_icons=true&theme=tokyonight" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Miniyonminerat&theme=tokyonight" />
-</p>
-
----
-
-## 🎯 Objetivo
-
-Construir un portafolio sólido que demuestre mis habilidades en desarrollo web y mi capacidad de crear proyectos funcionales.
-
----
-
-## 📈 Actualmente
-
-- Mejorando mis habilidades en JavaScript  
-- Trabajando en proyectos reales  
-- Aprendiendo buenas prácticas de desarrollo  
-
----
-
-## 🌐 Contacto
-
-- GitHub: https://github.com/Miniyonminerat  
-
----
-
-## ⚡ Frase
-
-> "La disciplina supera al talento cuando el talento no es constante."
+Juan Diego Monsalve Martinez
