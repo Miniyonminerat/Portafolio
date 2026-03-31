@@ -632,8 +632,7 @@
   background: transparent;
   
   transition: all var(--transition);
-  
-  margin-top: 15px; 
+   
 }
  
 /* Al pasar el mouse el borde y el ícono se vuelven rojos */

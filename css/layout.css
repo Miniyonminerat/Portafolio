@@ -276,7 +276,7 @@ section {
   
   color: var(--text-muted);
   
-  max-width: 460px; /* angosto para fácil lectura */
+  max-width: 350px; /* angosto para fácil lectura */
   
   margin-bottom: var(--space-md);
 }
