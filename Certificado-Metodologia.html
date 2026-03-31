@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado — Metodología Scrum | JDM</title>
+    <link rel="stylesheet" href="css/style_global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/certificados.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===================== NAV MÍNIMO ===================== -->
+    <nav id="cert-nav">
+
+        <!-- Izquierda: logo + separador + links -->
+        <div style="display:flex; align-items:center; gap:var(--space-md);">
+            <a href="index.html" id="nav-logo">
+                <div id="logo-circle">JDM</div>
+            </a>
+            <div class="nav-sep"></div>
+            <div id="cert-nav-links">
+                <a href="index.html"            class="cert-nav-link">Inicio</a>
+                <a href="index.html#educacion"  class="cert-nav-link active">Educación</a>
+            </div>
+        </div>
+
+        <!-- Derecha: botón tema -->
+        <div id="cert-nav-right">
+            <button id="theme-toggle" aria-label="Cambiar tema">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="cert-hero">
+        <div id="cert-hero-content">
+
+            <div id="cert-breadcrumb">
+                <a href="index.html">Inicio</a>
+                <span class="sep">—</span>
+                <a href="index.html#educacion">Educación</a>
+                <span class="sep">—</span>
+                <span>Certificado</span>
+            </div>
+
+            <div class="section-tag reveal">
+                <span class="tag-line"></span>
+                Certificado SENA
+            </div>
+
+            <h1 class="reveal">
+                Metodología<br>
+                <span class="accent">Scrum</span>
+            </h1>
+
+            <p class="reveal">
+                Formación en la aplicación de Scrum para proyectos de desarrollo de software,
+                cubriendo roles, eventos, artefactos y la gestión ágil de equipos.
+            </p>
+
+            <div id="cert-meta" class="reveal">
+                <span class="cert-chip"><i class="fa-solid fa-building-columns"></i> SENA</span>
+                <span class="cert-chip"><i class="fa-solid fa-clock"></i> 40 horas</span>
+                <span class="cert-chip"><i class="fa-solid fa-calendar"></i> Agosto 2025</span>
+                <span class="cert-chip"><i class="fa-solid fa-map-marker-alt"></i> Palmira, Valle</span>
+            </div>
+
+            <div id="cert-btns" class="reveal">
+                <a href="#cert-viewer" class="btn btn-primary">
+                    <i class="fa-solid fa-eye"></i> Ver certificado
+                </a>
+                <a href="docs/Metodologia_Scrum.pdf" download class="btn btn-secondary">
+                    <i class="fa-solid fa-download"></i> Descargar PDF
+                </a>
+            </div>
+
+        </div>
+
+        <div id="cert-kanji">証</div>
+    </section>
+
+    <!-- ===================== VISOR PDF ===================== -->
+    <section id="cert-viewer">
+
+        <div class="section-header reveal">
+            <div class="section-tag">
+                <span class="tag-line"></span>
+                Documento oficial
+            </div>
+            <h2 class="section-title">Certificado</h2>
+        </div>
+
+        <div id="cert-frame-wrapper" class="reveal">
+            <div id="cert-frame-bar">
+                <div id="cert-frame-bar-left">
+                    <div class="frame-dot red"></div>
+                    <div class="frame-dot gray"></div>
+                    <div class="frame-dot gray"></div>
+                    <span id="cert-frame-label">docs / Metodologia_Scrum.pdf</span>
+                </div>
+                <div id="cert-frame-actions">
+                    <a href="docs/Metodologia_Scrum.pdf" target="_blank" class="frame-btn">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir
+                    </a>
+                    <a href="docs/Metodologia_Scrum.pdf" download class="frame-btn">
+                        <i class="fa-solid fa-download"></i> Descargar
+                    </a>
+                </div>
+            </div>
+
+            <iframe
+                id="cert-iframe"
+                src="docs/Metodologia_Scrum.pdf"
+                title="Certificado Metodología Scrum — Juan Diego Monsalve Martinez"
+            ></iframe>
+        </div>
+
+        <div id="cert-info-grid">
+            <div class="cert-info-card reveal">
+                <i class="fa-solid fa-user cert-info-icon"></i>
+                <span class="cert-info-label">Titular</span>
+                <span class="cert-info-value">Juan Diego Monsalve M.</span>
+            </div>
+            <div class="cert-info-card reveal">
+                <i class="fa-solid fa-book cert-info-icon"></i>
+                <span class="cert-info-label">Curso</span>
+                <span class="cert-info-value">Metodología Scrum</span>
+            </div>
+            <div class="cert-info-card reveal">
+                <i class="fa-solid fa-clock cert-info-icon"></i>
+                <span class="cert-info-label">Duración</span>
+                <span class="cert-info-value">40 horas</span>
+            </div>
+            <div class="cert-info-card reveal">
+                <i class="fa-solid fa-calendar-check cert-info-icon"></i>
+                <span class="cert-info-label">Fecha</span>
+                <span class="cert-info-value">25 / 08 / 2025</span>
+            </div>
+        </div>
+
+        <div id="cert-verify" class="reveal">
+            <i class="fa-solid fa-circle-check"></i>
+            Verificable en
+            <a href="http://certificados.sena.edu.co" target="_blank" rel="noopener">
+                certificados.sena.edu.co
+            </a>
+            — N° 9544003268001TI1114312843C
+        </div>
+
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="footer">
+        <div id="footer-content">
+            <span id="footer-name">Juan Diego Monsalve.</span>
+            <span id="footer-copy">© 2025 — Todos los derechos reservados</span>
+            <div id="footer-social">
+                <a href="https://github.com/Miniyonminerat" target="_blank" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/juan-diego-monsalve-martinez-3669613b7/" target="_blank" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:miniyonminerat2@gmail.com" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

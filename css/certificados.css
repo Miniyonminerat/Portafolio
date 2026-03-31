@@ -1,0 +1,355 @@
+/* ================================================
+           VARIABLES LOCALES
+           ================================================ */
+        :root {
+            --nav-height: 70px;
+            --border: rgba(0,0,0,0.1);
+            --border-soft: rgba(0,0,0,0.06);
+        }
+
+        [data-theme="dark"] {
+            --border: rgba(255,255,255,0.1);
+            --border-soft: rgba(255,255,255,0.06);
+        }
+
+        /* ================================================
+           NAV MÍNIMO — solo para esta página
+           ================================================ */
+        #cert-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--space-lg);
+            background-color: var(--color-primary);
+            border-bottom: 0.5px solid var(--border-soft);
+            z-index: 1000;
+            transition: background-color var(--transition), border-color var(--transition);
+        }
+
+        #cert-nav.scrolled {
+            border-bottom-color: var(--border);
+        }
+
+        /* Lado izquierdo — logo */
+        #cert-nav-left {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            text-decoration: none;
+        }
+
+        /* Links mínimos */
+        #cert-nav-links {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .cert-nav-link {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color var(--transition);
+        }
+
+        .cert-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent);
+            transition: width var(--transition);
+        }
+
+        .cert-nav-link:hover,
+        .cert-nav-link.active {
+            color: var(--text);
+            opacity: 1;
+        }
+
+        .cert-nav-link:hover::after,
+        .cert-nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Lado derecho — tema */
+        #cert-nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Separador vertical entre logo y links */
+        .nav-sep {
+            width: 1px;
+            height: 18px;
+            background-color: var(--border);
+        }
+
+        @media (max-width: 768px) {
+            #cert-nav {
+                padding: 0 var(--space-sm);
+            }
+
+            #cert-nav-links {
+                gap: var(--space-sm);
+            }
+
+            .cert-nav-link {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* ================================================
+           HERO
+           ================================================ */
+        #cert-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: calc(var(--nav-height) + var(--space-lg));
+            position: relative;
+            overflow: hidden;
+        }
+
+        #cert-hero-content {
+            max-width: 650px;
+            z-index: 1;
+            min-width: 400px;
+        }
+
+        #cert-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+        }
+
+        #cert-hero p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 350px;
+            margin-bottom: var(--space-md);
+        }
+
+        #cert-kanji {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-display);
+            font-size: clamp(120px, 20vw, 220px);
+            font-weight: 300;
+            color: var(--text);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+
+        #cert-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: var(--space-sm);
+        }
+
+        #cert-breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        #cert-breadcrumb a:hover { color: var(--accent); opacity: 1; }
+        #cert-breadcrumb .sep   { color: var(--accent); }
+
+        #cert-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: var(--space-md);
+        }
+
+        .cert-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border: 0.5px solid var(--border);
+            padding: 5px 14px;
+            transition: border-color var(--transition), color var(--transition);
+        }
+
+        .cert-chip i      { color: var(--accent); font-size: 0.7rem; }
+        .cert-chip:hover  { border-color: var(--accent); color: var(--accent); }
+
+        #cert-btns {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .btn { padding: 0.75rem 1.5rem; }
+
+        /* ================================================
+           VISOR PDF
+           ================================================ */
+        #cert-viewer { border-top: 0.5px solid var(--border-soft); }
+
+        #cert-frame-wrapper {
+            position: relative;
+            border: 0.5px solid var(--border);
+            background-color: var(--color-primary);
+            overflow: hidden;
+            transition: border-color var(--transition);
+        }
+
+        #cert-frame-wrapper:hover { border-color: var(--accent); }
+
+        #cert-frame-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            border-bottom: 0.5px solid var(--border);
+            background-color: var(--color-primary);
+        }
+
+        #cert-frame-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .frame-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 0.5px solid var(--border);
+        }
+
+        .frame-dot.red  { border-color: var(--accent); background-color: var(--accent); opacity: 0.7; }
+        .frame-dot.gray { background-color: transparent; }
+
+        #cert-frame-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        #cert-frame-actions { display: flex; gap: 8px; }
+
+        .frame-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border: 0.5px solid var(--border);
+            padding: 4px 12px;
+            text-decoration: none;
+            transition: all var(--transition);
+            background: transparent;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+
+        .frame-btn:hover { border-color: var(--accent); color: var(--accent); opacity: 1; }
+
+        #cert-iframe {
+            width: 100%;
+            height: 680px;
+            display: block;
+            border: none;
+            background-color: #f0f0f0;
+        }
+
+        /* ================================================
+           INFO CARDS
+           ================================================ */
+        #cert-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: var(--space-md);
+        }
+
+        .cert-info-card {
+            padding: var(--space-sm);
+            border: 0.5px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: border-color var(--transition);
+        }
+
+        .cert-info-card:hover { border-color: var(--accent); }
+
+        .cert-info-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .cert-info-value {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .cert-info-icon { color: var(--accent); font-size: 0.85rem; margin-bottom: 4px; }
+
+        #cert-verify {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            border: 0.5px solid var(--border);
+            padding: 8px 16px;
+            margin-top: var(--space-sm);
+            letter-spacing: 0.06em;
+            
+        }
+
+        #cert-verify i { color: var(--accent); }
+        #cert-verify a { color: var(--accent); font-weight: 500; }
+        @media (max-width: 768px) {
+            #cert-verify {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+                font-size: 0.72rem;
+                word-break: break-all;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #cert-iframe { height: 420px; }
+            #cert-hero   { padding-top: calc(var(--nav-height) + var(--space-md)); }
+            #cert-frame-actions { display: none; }
+        }
