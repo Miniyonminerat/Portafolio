@@ -61,11 +61,43 @@ Aplicación en construcción enfocada en práctica avanzada:
 
 ---
 
+## 📋 Diario — Miniproyecto JS 
+
+Pagina web para gestionar el dia a dia con su logica basica de JS:
+
+- Logica basica de JS para gestionar el dia a dia 
+- Menu minimalista estilo japones 
+- Apartados para colocar datos personales (sentimientos)
+
+
+📌 Estado: Terminado (Demo) proximas mejoras:
+
+🔗 https://github.com/Miniyonminerat/Diario-Samurai
+
+---
+
+## 🔒 Vault Seguro - Guardar contraseñas 🔐
+
+Pagina web para guardar contraseñas localmente con:
+
+- Guardar contraseñas localmente 
+- Interfaz minimalista 
+- Backend Node.js y uso de API para mejoras de seguridad
+
+📌 Estado: Terminado (Demo) proximas mejoras:
+
+🔗 https://github.com/Miniyonminerat/Password-Manager
+
+---
+
 ## 🛠️ Tecnologías utilizadas
 
 - HTML5  
 - CSS3  
 - JavaScript  
+- Node.js
+- API's de terceros 
+- Python
 
 ---
 
