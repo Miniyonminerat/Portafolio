@@ -233,7 +233,7 @@
 
 .skill-group {
 
-    padding: var(--space-sm) var(--space-md); /* Espaciado interno para el grupo de habilidades usando las variables para el espacio pequeño y mediano */
+    padding: 1.25rem 2.25rem; /* Aumentado ligeramente para dar más espacio */
 
     border: 0.5px solid var(--border); /* Borde sólido para el grupo de habilidades usando la variable para el color del borde */
 

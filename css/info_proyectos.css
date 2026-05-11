@@ -1,0 +1,147 @@
+/* ================================================
+   INFO_PROYECTOS.CSS — Estilos para Info Page
+   Siguiendo el sistema de diseño del portafolio
+   ================================================ */
+
+:root {
+  /* Mantenemos las variables locales para esta página pero sincronizadas */
+  --bg-dark: #0a0a0a;
+  --bg-card: #1a1a1a;
+  --accent: #fd0000; /* Rojo característico del portafolio */
+  --text-main: #f0f0f0;
+  --text-muted: #999;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at 20% 30%, #1a1a1a 0%, #0a0a0a 100%);
+  margin: 0;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+}
+
+.info-container {
+  max-width: 550px;
+  width: 90%;
+  padding: 3.5rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+  animation: cardEntrance 0.8s ease-out;
+}
+
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.info-icon {
+  font-size: 4.5rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 15px rgba(253, 0, 0, 0.2));
+}
+
+.info-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 2.8rem;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.info-desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.accent-dot {
+  color: var(--accent);
+}
+
+.info-btns {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Usando las clases de botones del portafolio si están disponibles, 
+   o definiendo estilos consistentes aquí */
+.btn {
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--text-main);
+  color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  filter: brightness(0.9);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Glow circles — Sincronizados con el Rojo de acento */
+.glow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  z-index: 1;
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+.glow-1 {
+  top: -10%;
+  right: -5%;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+}
+
+.glow-2 {
+  bottom: -10%;
+  left: -5%;
+  background: radial-gradient(circle, #333 0%, transparent 70%);
+}
+
+@media (max-width: 600px) {
+  .info-container {
+    padding: 2.5rem 1.5rem;
+  }
+  .info-title {
+    font-size: 2.2rem;
+  }
+}
